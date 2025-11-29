@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.b8d781fe.css",
-    "main.js": "/static/js/main.99248a48.js",
-    "static/js/453.5683da0c.chunk.js": "/static/js/453.5683da0c.chunk.js",
-    "index.html": "/index.html",
-    "main.b8d781fe.css.map": "/static/css/main.b8d781fe.css.map",
-    "main.99248a48.js.map": "/static/js/main.99248a48.js.map",
-    "453.5683da0c.chunk.js.map": "/static/js/453.5683da0c.chunk.js.map"
+    "main.css": "/wishlist-app/static/css/main.b8d781fe.css",
+    "main.js": "/wishlist-app/static/js/main.d0f9b328.js",
+    "static/js/453.5683da0c.chunk.js": "/wishlist-app/static/js/453.5683da0c.chunk.js",
+    "index.html": "/wishlist-app/index.html",
+    "main.b8d781fe.css.map": "/wishlist-app/static/css/main.b8d781fe.css.map",
+    "main.d0f9b328.js.map": "/wishlist-app/static/js/main.d0f9b328.js.map",
+    "453.5683da0c.chunk.js.map": "/wishlist-app/static/js/453.5683da0c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b8d781fe.css",
-    "static/js/main.99248a48.js"
+    "static/js/main.d0f9b328.js"
   ]
 }
