@@ -23,15 +23,12 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
-      {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/20 backdrop-blur-sm"
         onClick={onClose}
       />
 
-      {/* Modal */}
       <div className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md max-h-[90vh] overflow-hidden flex flex-col">
-        {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-100">
           <h2 className="text-xl font-semibold text-gray-900">{title}</h2>
           <button
@@ -44,7 +41,6 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
           </button>
         </div>
 
-        {/* Content */}
         <div className="overflow-y-auto flex-1">
           {children}
         </div>

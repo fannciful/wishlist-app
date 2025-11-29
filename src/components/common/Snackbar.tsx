@@ -24,7 +24,6 @@ export function Snackbar({ message, type, onClose, duration = 3000 }: SnackbarPr
           }
         `}
       >
-        {/* Icon */}
         {type === 'success' ? (
           <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -35,10 +34,8 @@ export function Snackbar({ message, type, onClose, duration = 3000 }: SnackbarPr
           </svg>
         )}
         
-        {/* Message */}
         <p className="text-sm font-medium">{message}</p>
         
-        {/* Close button */}
         <button
           onClick={onClose}
           className="ml-auto p-1 hover:bg-white/10 rounded transition-colors"

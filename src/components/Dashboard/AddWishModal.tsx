@@ -93,7 +93,6 @@ export function AddWishModal({ isOpen, onClose, onSubmit, editingWish }: AddWish
       title={editingWish ? 'Edit Wish' : 'Add Wish'}
     >
       <form onSubmit={handleSubmit} className="p-6 space-y-5">
-        {/* Title */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Title
@@ -111,7 +110,6 @@ export function AddWishModal({ isOpen, onClose, onSubmit, editingWish }: AddWish
           )}
         </div>
 
-        {/* Description */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Description
@@ -129,7 +127,6 @@ export function AddWishModal({ isOpen, onClose, onSubmit, editingWish }: AddWish
           )}
         </div>
 
-        {/* Price */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Price
@@ -152,7 +149,6 @@ export function AddWishModal({ isOpen, onClose, onSubmit, editingWish }: AddWish
           )}
         </div>
 
-        {/* Image URL */}
         <div>
           <label className="block text-sm font-medium text-gray-700 mb-2">
             Image URL
@@ -170,7 +166,6 @@ export function AddWishModal({ isOpen, onClose, onSubmit, editingWish }: AddWish
           )}
         </div>
 
-        {/* Actions */}
         <div className="flex gap-3 pt-2">
           <button
             type="button"

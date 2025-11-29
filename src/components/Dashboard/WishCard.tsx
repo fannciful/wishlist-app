@@ -11,7 +11,6 @@ interface WishCardProps {
 export function WishCard({ wish, onDelete, onUpdate }: WishCardProps) {
   return (
     <div className="card-modern overflow-hidden group">
-      {/* Image */}
       <div className="relative aspect-[4/3] bg-gray-100 overflow-hidden">
         <img
           src={wish.imageUrl}
@@ -23,9 +22,7 @@ export function WishCard({ wish, onDelete, onUpdate }: WishCardProps) {
         />
       </div>
 
-      {/* Content */}
       <div className="p-5">
-        {/* Title & Description */}
         <h3 className="text-lg font-semibold text-gray-900 mb-1 line-clamp-1">
           {wish.title}
         </h3>
@@ -33,7 +30,6 @@ export function WishCard({ wish, onDelete, onUpdate }: WishCardProps) {
           {wish.description}
         </p>
 
-        {/* Price & Date */}
         <div className="flex items-baseline justify-between mb-5">
           <span className="text-2xl font-bold text-gray-900">
             ${wish.price.toLocaleString()}
@@ -46,7 +42,6 @@ export function WishCard({ wish, onDelete, onUpdate }: WishCardProps) {
           </span>
         </div>
 
-        {/* Actions */}
         <div className="flex gap-2">
           <Link
             to={`/wish/${wish.id}`}

@@ -85,7 +85,6 @@ export function Dashboard() {
   return (
     <div className="min-h-screen p-6 md:p-8 lg:p-12">
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <div className="mb-12 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
             Wishlist
@@ -95,7 +94,6 @@ export function Dashboard() {
           </p>
         </div>
 
-        {/* Filter Bar */}
         <div className="mb-8 animate-fade-in" style={{ animationDelay: '0.1s' }}>
           <FilterBar
             sortByDate={sortByDate}
@@ -106,7 +104,6 @@ export function Dashboard() {
           />
         </div>
 
-        {/* Content */}
         {loading ? (
           <div className="flex items-center justify-center py-32">
             <div className="w-8 h-8 border-2 border-gray-300 border-t-gray-900 rounded-full animate-spin"></div>
@@ -145,7 +142,6 @@ export function Dashboard() {
           </div>
         )}
 
-        {/* Modals */}
         <AddWishModal
           isOpen={isAddModalOpen}
           onClose={handleModalClose}

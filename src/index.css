@@ -12,7 +12,6 @@
 }
 
 @layer components {
-  /* Modern card */
   .card-modern {
     @apply bg-white rounded-2xl border border-gray-200;
     @apply transition-all duration-200 ease-out;
@@ -22,7 +21,6 @@
     @apply border-gray-300 shadow-lg;
   }
 
-  /* Buttons */
   .btn-primary {
     @apply bg-gray-900 text-white px-6 py-2.5 rounded-xl;
     @apply font-medium transition-all duration-200;
@@ -47,7 +45,6 @@
     @apply hover:bg-emerald-600 active:scale-95;
   }
 
-  /* Inputs */
   .input-field {
     @apply w-full px-4 py-3 rounded-xl border border-gray-200;
     @apply transition-all duration-200 outline-none;
@@ -64,7 +61,6 @@
 }
 
 @layer utilities {
-  /* Animations */
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -95,7 +91,6 @@
     animation: slide-up 0.3s ease-out;
   }
 
-  /* Line clamp */
   .line-clamp-2 {
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -110,7 +105,6 @@
     overflow: hidden;
   }
 
-  /* Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;

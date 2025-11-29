@@ -12,7 +12,7 @@
       "id": "3",
       "title": "Sony WH-1000XM5",
       "description": "Premium wireless noise-canceling headphones with industry-leading audio quality and 30-hour battery life.",
-      "price": 399,
+      "price": 3992,
       "imageUrl": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&q=80",
       "createdAt": "2024-11-22T09:15:00.000Z"
     },
@@ -23,6 +23,13 @@
       "price": 1299,
       "imageUrl": "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80",
       "createdAt": "2024-11-25T16:45:00.000Z"
+    },
+    {
+      "title": "dewed",
+      "description": "cedcwdew",
+      "price": 123,
+      "imageUrl": "https://cdn.27.ua/sc--media--prod/default/75/b0/09/75b009d4-43dd-4ea5-a4e7-730c0ea9ba3a.jpg",
+      "id": "6512"
     }
   ]
 }

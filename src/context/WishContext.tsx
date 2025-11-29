@@ -20,64 +20,74 @@ interface WishContextType {
 
 const WishContext = createContext<WishContextType | undefined>(undefined);
 
-const API_URL = 'http://localhost:3001/wishes';
+const API_URL = process.env.NODE_ENV === 'production'
+  ? 'https://my-json-server.typicode.com/fannciful/wishlist-app/wishes'
+  : 'http://localhost:3001/wishes';
 
 export function WishProvider({ children }: { children: ReactNode }) {
   const [wishes, setWishes] = useState<Wish[]>([]);
   const [sortByDate, setSortByDate] = useState<SortByDate>('newest');
   const [sortByPrice, setSortByPrice] = useState<SortByPrice>('high-to-low');
   
-  const { loading, error, execute } = useApi<Wish[]>();
+  const { loading, error, execute } = useApi<any>();
 
   const fetchWishes = useCallback(async () => {
     const result = await execute(API_URL);
     if (result) {
-      setWishes(result);
+      setWishes(Array.isArray(result) ? result : []);
     }
   }, [execute]);
 
   const addWish = useCallback(async (wishData: WishFormData): Promise<boolean> => {
-    const newWish = {
+    const newWish: Wish = {
+      id: Date.now().toString(),
       ...wishData,
       createdAt: new Date().toISOString(),
     };
 
-    const result = await execute(API_URL, {
-      method: 'POST',
-      body: JSON.stringify(newWish),
-    });
-
-    if (result) {
-      await fetchWishes();
+    try {
+      await execute(API_URL, {
+        method: 'POST',
+        body: JSON.stringify(newWish),
+      });
+      setWishes(prev => [...prev, newWish]);
       return true;
+    } catch (err) {
+      console.error('Failed to add wish:', err);
+      return false;
     }
-    return false;
-  }, [execute, fetchWishes]);
+  }, [execute]);
 
   const updateWish = useCallback(async (id: string, wishData: WishFormData): Promise<boolean> => {
-    const result = await execute(`${API_URL}/${id}`, {
-      method: 'PATCH',
-      body: JSON.stringify(wishData),
-    });
+    try {
+      await execute(`${API_URL}/${id}`, {
+        method: 'PUT',
+        body: JSON.stringify(wishData),
+      });
 
-    if (result) {
-      await fetchWishes();
+      setWishes(prev => prev.map(wish => 
+        wish.id === id ? { ...wish, ...wishData } : wish
+      ));
       return true;
+    } catch (err) {
+      console.error('Failed to update wish:', err);
+      return false;
     }
-    return false;
-  }, [execute, fetchWishes]);
+  }, [execute]);
 
   const deleteWish = useCallback(async (id: string): Promise<boolean> => {
-    const result = await execute(`${API_URL}/${id}`, {
-      method: 'DELETE',
-    });
+    try {
+      await execute(`${API_URL}/${id}`, {
+        method: 'DELETE',
+      });
 
-    if (result !== null) {
-      await fetchWishes();
+      setWishes(prev => prev.filter(wish => wish.id !== id));
       return true;
+    } catch (err) {
+      console.error('Failed to delete wish:', err);
+      return false;
     }
-    return false;
-  }, [execute, fetchWishes]);
+  }, [execute]);
 
   const getWishById = useCallback((id: string) => {
     return wishes.find(wish => wish.id === id);
@@ -86,14 +96,12 @@ export function WishProvider({ children }: { children: ReactNode }) {
   const getSortedWishes = useCallback(() => {
     let sorted = [...wishes];
 
-    // Sort by date
     sorted.sort((a, b) => {
       const dateA = new Date(a.createdAt).getTime();
       const dateB = new Date(b.createdAt).getTime();
       return sortByDate === 'newest' ? dateB - dateA : dateA - dateB;
     });
 
-    // Sort by price
     sorted.sort((a, b) => {
       return sortByPrice === 'high-to-low' ? b.price - a.price : a.price - b.price;
     });

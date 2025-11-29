@@ -51,7 +51,6 @@ export function WishPage() {
   return (
     <div className="min-h-screen bg-gray-50 p-6 md:p-8">
       <div className="max-w-2xl mx-auto">
-        {/* Back Button */}
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 mb-6 transition-colors group"
@@ -62,9 +61,7 @@ export function WishPage() {
           <span className="font-medium">Back</span>
         </Link>
 
-        {/* Main Content */}
         <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden animate-fade-in">
-          {/* Image */}
           <div className="h-64 bg-gray-100 overflow-hidden">
             <img
               src={wish.imageUrl}
@@ -76,9 +73,7 @@ export function WishPage() {
             />
           </div>
 
-          {/* Content */}
           <div className="p-6">
-            {/* Title & Date */}
             <div className="mb-4">
               <h1 className="text-2xl font-bold text-gray-900 mb-2">
                 {wish.title}
@@ -92,21 +87,18 @@ export function WishPage() {
               </span>
             </div>
 
-            {/* Price */}
             <div className="mb-4 pb-4 border-b border-gray-100">
               <div className="text-3xl font-bold text-gray-900">
                 ${wish.price.toLocaleString()}
               </div>
             </div>
 
-            {/* Description */}
             <div className="mb-6">
               <p className="text-gray-600 leading-relaxed">
                 {wish.description}
               </p>
             </div>
 
-            {/* Actions */}
             <div className="flex gap-3">
               <button
                 onClick={() => setIsUpdateModalOpen(true)}
@@ -126,7 +118,6 @@ export function WishPage() {
           </div>
         </div>
 
-        {/* Modals */}
         <AddWishModal
           isOpen={isUpdateModalOpen}
           onClose={() => setIsUpdateModalOpen(false)}

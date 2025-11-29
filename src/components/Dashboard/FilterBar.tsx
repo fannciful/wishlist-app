@@ -18,7 +18,6 @@ export function FilterBar({
 }: FilterBarProps) {
   return (
     <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-      {/* Filters */}
       <div className="flex flex-wrap gap-3">
         <select
           value={sortByDate}
@@ -39,7 +38,6 @@ export function FilterBar({
         </select>
       </div>
 
-      {/* Add Button */}
       <button
         onClick={onAddClick}
         className="btn-primary w-full sm:w-auto"

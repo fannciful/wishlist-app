@@ -1,46 +1,99 @@
-# Getting Started with Create React App
+# WishList App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern CRUD React application for managing your wishlist.
 
-## Available Scripts
+🔗 **Live Demo:** https://fannciful.github.io/wishlist-app/
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- ✅ Create, Read, Update, Delete wishes
+- ✅ Filter by date and price
+- ✅ Responsive design (320px+)
+- ✅ Form validation
+- ✅ Success/error notifications
+- ✅ Minimalist UI design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Tech Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React 18 + TypeScript
+- Tailwind CSS
+- React Router
+- Context API
+- JSON Server (local) / My JSON Server (production)
 
-### `npm test`
+## Installation
+```bash
+git clone https://github.com/fannciful/wishlist-app.git
+cd wishlist-app
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running Locally
 
-### `npm run build`
+### Option 1: Run separately
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Terminal 1:**
+```bash
+npm run server
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Terminal 2:**
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Option 2: Run together
+```bash
+npm run dev
+```
 
-### `npm run eject`
+Open http://localhost:3000
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## API
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Local Development
+Uses **JSON Server** on http://localhost:3001
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Production
+Uses **My JSON Server** at https://my-json-server.typicode.com/fannciful/wishlist-app/wishes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Note:** My JSON Server simulates POST/PUT/DELETE but doesn't persist changes (free tier limitation).
 
-## Learn More
+## Deployment
+```bash
+npm run deploy
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Then configure GitHub Pages:
+- Settings → Pages → Source: `gh-pages` branch
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Project Structure
+```
+src/
+├── components/
+│   ├── Dashboard/
+│   ├── WishPage/
+│   └── common/
+├── context/
+├── hooks/
+├── types/
+└── App.tsx
+```
+
+## Requirements Met
+
+- ✅ React 18 + TypeScript
+- ✅ Functional components only
+- ✅ Custom hooks (useApi)
+- ✅ Context API
+- ✅ Tailwind CSS
+- ✅ JSON Server
+- ✅ No Redux/MobX/Axios
+- ✅ Responsive design
+- ✅ GitHub Pages deployment
+
+## Author
+
+**Yuliia** (fannciful)
+- GitHub: [@fannciful](https://github.com/fannciful)
+
