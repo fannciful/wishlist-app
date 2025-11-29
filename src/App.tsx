@@ -1,12 +1,12 @@
 import React from 'react';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { WishProvider } from './context/WishContext';
 import { Dashboard } from './components/Dashboard/Dashboard';
 import { WishPage } from './components/WishPage/WishPage';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/wishlist-app">
       <WishProvider>
         <Routes>
           <Route path="/" element={<Dashboard />} />
